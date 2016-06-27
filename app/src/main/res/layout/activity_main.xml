@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D95238"
+    tools:context="com.salmonzhg.heartbeatview.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <com.salmonzhg.heartbeatview.views.DigitalGroupView
+            android:id="@+id/digi_heartbeat_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:digiGroupColor="@color/heartbeat"
+            android:layout_centerInParent="true"
+            app:digiGroupFigureCounts="3"
+            app:digiGroupTextSize="17sp" />
+
+        <TextView
+            android:id="@+id/text_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/digi_heartbeat_result"
+            android:layout_centerVertical="true"
+            android:textColor="@color/heartbeat"
+            android:textSize="10sp"
+            android:layout_marginLeft="5dp"
+            android:text="次/分钟"/>
+
+        <com.salmonzhg.heartbeatview.views.HeartbeatView
+            android:id="@+id/heartbeat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_heartbeat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/white"
+        android:layout_weight="1"/>
+
+</LinearLayout>
